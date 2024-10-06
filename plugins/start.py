@@ -17,6 +17,7 @@ from config import (
     ADMINS,
     FORCE_MSG,
     START_MSG,
+    START_PIC,
     CUSTOM_CAPTION,
     IS_VERIFY,
     VERIFY_EXPIRE,
@@ -141,8 +142,20 @@ async def start_command(client: Client, message: Message):
                 [[InlineKeyboardButton("⚡️ ᴀʙᴏᴜᴛ", callback_data = "about"),
                   InlineKeyboardButton('🍁 ᴊᴏɪɴ ᴍᴏʀᴇ', url='https://t.me/Uchiha_Community/40')]]
             )
-            await message.reply_text(
-                text=START_MSG.format(
+#Added form here
+    #if START_PIC:
+    #    await message.reply_photo(START_PIC, caption=START_MSG.format(
+    #            first = message.from_user.first_name,
+     #          last = message.from_user.last_name,
+      #          username = None if not message.from_user.username else '@' + message.from_user.username,
+   #             mention = message.from_user.mention,
+      #          id = message.from_user.id
+       #     ), 
+        #    reply_markup=reply_markup
+     #   ) 
+   # else:
+         #Above code is added for Start pic  
+            await message.reply_photo(START_PIC, caption=START_MSG.format(
                     first=message.from_user.first_name,
                     last=message.from_user.last_name,
                     username=None if not message.from_user.username else '@' + message.from_user.username,
