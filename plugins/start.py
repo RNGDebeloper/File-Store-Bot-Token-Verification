@@ -139,7 +139,7 @@ async def start_command(client: Client, message: Message):
         elif verify_status['is_verified']:
             reply_markup = InlineKeyboardMarkup(
                 [[InlineKeyboardButton("⚡️ ᴀʙᴏᴜᴛ", callback_data = "about"),
-                  InlineKeyboardButton('🍁 sᴇʀɪᴇsғʟɪx', url='https://t.me/Team_Netflix/40')]]
+                  InlineKeyboardButton('🍁 ᴊᴏɪɴ ᴍᴏʀᴇ', url='https://t.me/Uchiha_Community/40')]]
             )
             await message.reply_text(
                 text=START_MSG.format(
@@ -163,8 +163,8 @@ async def start_command(client: Client, message: Message):
                 await update_verify_status(id, verify_token=token, link="")
                 link = await get_shortlink(SHORTLINK_URL, SHORTLINK_API,f'https://telegram.dog/{client.username}?start=verify_{token}')
                 btn = [
-                    [InlineKeyboardButton("• ᴏᴘᴇɴ ʟɪɴᴋ", url=link)],
-                    [InlineKeyboardButton('ᴛᴜᴛᴏʀɪᴀʟ •', url=TUT_VID)]
+                    [InlineKeyboardButton("• ᴏᴘᴇɴ ʟɪɴᴋ", url=link),InlineKeyboardButton('ᴛᴜᴛᴏʀɪᴀʟ •', url=TUT_VID)]
+                    [InlineKeyboardButton('• ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ •', callback_data = "about")]
                 ]
                 await message.reply(f"Your Ads token is expired, refresh your token and try again.\n\nToken Timeout: {get_exp_time(VERIFY_EXPIRE)}\n\nWhat is the token?\n\nThis is an ads token. If you pass 1 ad, you can use the bot for 24 Hour after passing the ad.", reply_markup=InlineKeyboardMarkup(btn), protect_content=False, quote=True)
 
@@ -186,9 +186,13 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
 async def not_joined(client: Client, message: Message):
     buttons = [
         [
-            InlineKeyboardButton(
-                "• ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ •",
-                url = client.invitelink)
+                    InlineKeyboardButton("Join Channel", url = "https://t.me/+DTG96SHZ3-IyODhl"),
+                    InlineKeyboardButton("Join 2nd Channel", url = "https://t.me/Toonami_India")
+                    
+        ],
+        [
+            InlineKeyboardButton("Join 3rd Channel", url = client.invitelink),
+            InlineKeyboardButton("Subscribe Yt Channel", url = "https://youtube.com/@anitube_india" )
         ]
     ]
     try:
