@@ -41,6 +41,9 @@ except ValueError:
 #Force sub message 
 FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "ʜᴇʟʟᴏ {first}\n\n<b>ᴊᴏɪɴ ᴏᴜʀ ᴛɢ ᴄʜᴀɴɴᴇʟ & ʏᴛ ᴄʜᴀɴɴᴇʟ ᴛᴏᴏ ᴀɴᴅ ᴛʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ ʀᴇʟᴏᴀᴅ button ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛᴇᴅ ꜰɪʟᴇ.</b>")
 
+#Adding a Start Pic!!
+START_PIC = os.environ.get("START_PIC", "https://t.me/Movies_Streaming_HQ/2662")
+
 #set your Custom Caption here, Keep None for Disable Custom Caption
 CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", "<b>• ʙʏ @Uchiha_Developer</b>")
 
