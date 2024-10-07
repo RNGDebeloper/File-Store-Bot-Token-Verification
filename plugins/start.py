@@ -142,19 +142,7 @@ async def start_command(client: Client, message: Message):
                 [[InlineKeyboardButton("⚡️ ᴀʙᴏᴜᴛ", callback_data = "about"),
                   InlineKeyboardButton('🍁 ᴊᴏɪɴ ᴍᴏʀᴇ', url='https://t.me/Uchiha_Community/40')]]
             )
-#Added form here
-    if START_PIC:
-        await message.reply_photo(START_PIC, caption=START_MSG.format(
-                first = message.from_user.first_name,
-               last = message.from_user.last_name,
-                username = None if not message.from_user.username else '@' + message.from_user.username,
-                mention = message.from_user.mention,
-                id = message.from_user.id
-            ), 
-            reply_markup=reply_markup
-        ) 
-    else:
-         #Above code is added for Start pic  
+
             await message.reply_text(
                 text = START_MSG.format(
                     first=message.from_user.first_name,
@@ -182,7 +170,32 @@ async def start_command(client: Client, message: Message):
                 ]
                 await message.reply(f"Your Ads token is expired, refresh your token and try again.\n\nToken Timeout: {get_exp_time(VERIFY_EXPIRE)}\n\nWhat is the token?\n\nThis is an ads token. If you pass 1 ad, you can use the bot for 24 Hour after passing the ad.", reply_markup=InlineKeyboardMarkup(btn), protect_content=False, quote=True)
 
-
+   
+#Added form here
+    if START_PIC:
+        await message.reply_photo(START_PIC, caption=START_MSG.format(
+                first = message.from_user.first_name,
+               last = message.from_user.last_name,
+                username = None if not message.from_user.username else '@' + message.from_user.username,
+                mention = message.from_user.mention,
+                id = message.from_user.id
+            ), 
+            reply_markup=reply_markup
+        ) 
+    else:
+         #Above code is added for Start pic  
+            await message.reply_text(
+                text = START_MSG.format(
+                    first=message.from_user.first_name,
+                    last=message.from_user.last_name,
+                    username=None if not message.from_user.username else '@' + message.from_user.username,
+                    mention=message.from_user.mention,
+                    id=message.from_user.id
+                ),
+                reply_markup=reply_markup,
+                disable_web_page_preview=True,
+                quote=True
+            )
 
     
         
